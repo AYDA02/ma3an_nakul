@@ -1,5 +1,5 @@
 {
-  "name": "luqmit-3ish",
+  "name": "ma3an_nakul",
   "version": "1.0.0",
   "description": "Web 2 final project repo",
   "main": "app.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ibtihaj7/Luqmit-3ish.git"
+    "url": "git+https://github.com/AYDA02/ma3an_nakul.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Ibtihaj7/Luqmit-3ish/issues"
+    "url": "https://github.com/AYDA02/ma3an_nakul/issues"
   },
   "type": "commonjs",
-  "homepage": "https://github.com/Ibtihaj7/Luqmit-3ish#readme",
+  "homepage": "https://github.com/AYDA02/ma3an_nakul#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
