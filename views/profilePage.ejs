@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ar"dir="rtl">
+    <%- include("./partials/head") %>
+<body style="background-color: #ffc153;">
+    <%- include("./partials/header2") %>
+    <div style="height: 70vh; margin-top: 20vh;display: flex;" class="container rounded bg-white col-md-6">
+        <div>
+            <div class="">
+                <div class="col-md-12"><label style="font-family: 'Vazirmatn', sans-serif;"class="labels">الاسم  :  </label><label style="width:12vw" class="p-2"value=""> <%=  data[0].name %>   </label><br><br></div>
+                <div class="col-md-12"><label class="labels">الايميل  :  </label><label style="width:12vw" class="p-2" > <%=  data[0].email %> </label><br><br></div>
+                <div class="col-md-12"><label class="labels">رقم الهاتف  :  </label><label style="width:12vw" class="p-2" > <%=  data[0].phone %> </label><br><br></div>
+                <div class="col-md-12"><label class="labels">الموقع الالكتروني  :  </label><label class="p-2" > <%=  data[0].website %> </label><br><br></div>
+                <div class="col-md-12"><label class="labels">الموقع  :  </label><label style="width:12vw" class="p-2" > <%=  data[0].location %> </label></div><br><br><br><br>
+            </div>
+            <%if(btn){%>
+                <form action="/edit" method = "POST">
+                    <div class="mt-2"><button style="margin-right:0" class="btn btn-primary profile-button" type="submit">تعديل الملف الشخصي</button></div>
+                </form>
+            <%}%>
+        </div>        
+        <div style="width:15vw; border:double 7px " class='divv'>
+            <img style="width:100%" src= "/uploads/<%= data[0].img %>" alt=""/>
+        </div>
+    </div>
+</body>
+</html>
