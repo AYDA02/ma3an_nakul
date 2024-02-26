@@ -21,8 +21,8 @@ function sendContactUsEmail(bodyText){
 
 //Step 2
     let mailOption = {
-        from: 'لقمة عيش',       
-        to: "haseebarama@gmail.com",                       
+        from: 'معاً نأكل ',       
+        to: "ayda.2002.20@gmail.com",                       
         subject: `${bodyText.subject}`, 
         html: `  
         <h5>اسم المرسل : ${bodyText.name} </h5>  
