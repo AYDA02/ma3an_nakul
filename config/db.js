@@ -1,6 +1,6 @@
 const mysql = require("mysql")
 const dotenv = require('dotenv').config()    
-
+//تحميل مكتبة dotenv لقراءة متغيرات التعريف في ملف .env.
 try{
     let connection = mysql.createConnection({
         host: process.env.host,

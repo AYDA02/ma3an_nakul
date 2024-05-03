@@ -5,11 +5,9 @@ const db = require('./db')
 const dotenv = require('dotenv').config()          
 
 function sendVerEmail(email){
-    //url to be used in the email 
     currentURL = "http://localhost:3000/"
     const uniqueString = uuidv4();
 
-    //nodemailer staff 
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         secure: true,

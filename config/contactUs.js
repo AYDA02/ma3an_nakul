@@ -2,7 +2,6 @@ const nodemailer = require('nodemailer')
 const dotenv = require('dotenv').config()          
 
 function sendContactUsEmail(bodyText){ 
-    //nodemailer staff 
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         secure: true,
@@ -18,8 +17,6 @@ function sendContactUsEmail(bodyText){
             console.log("Email sent successfully")
         }
     })
-
-//Step 2
     let mailOption = {
         from: 'معاً نأكل ',       
         to: "ayda.2002.20@gmail.com",                       

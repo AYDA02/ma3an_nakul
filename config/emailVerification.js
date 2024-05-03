@@ -3,11 +3,12 @@ const bcrypt = require("bcrypt")
 const db = require('./db')
 const dotenv = require('dotenv').config()
 
+//تقوم هذه الدالة باستلام عنوان البريد الإلكتروني  والمعلومات المشفرة  كمعاملات
 function sendVerEmail(email,hashedInfo){
-    //url to be used in the email 
+    //رابط الموقع
     currentURL = "http://localhost:3000/"
 
-    //nodemailer staff 
+//إعداد وإرسال بريد إلكتروني يحتوي على رابط لتحقق البريد الإلكتروني للمستخدم
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         secure: true,
