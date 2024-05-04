@@ -1,7 +1,7 @@
 const classes = ['mainDishes', 'sandwich', 'juice', 'sweets', 'soup', 'fastFood']     
 
     for(let i = 0; i < 6; i++){
-        document.querySelectorAll(".btn")[i].addEventListener("click", addItem);
+        document.querySelectorAll(".btn")[i].addEventListener("click", addItem);//لكل زر من الازرار
     } 
 
     function addItem(){
@@ -18,7 +18,7 @@ const classes = ['mainDishes', 'sandwich', 'juice', 'sweets', 'soup', 'fastFood'
             document.querySelector("#text").innerHTML += "،" + document.querySelectorAll("."+classes[classLocations])[0].innerHTML  
             document.querySelector("#ids").innerHTML += "،"+document.getElementById(classes[classLocations]).value 
         }
-        Toastify({
+        Toastify({//مكتبة لعرض التنبيه
             text: "يرجى تأكيد الحجز في الاسفل عند الانتهاء",
             duration: 4000, 
             newWindow: false,
