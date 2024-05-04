@@ -7,10 +7,14 @@ const dotenv = require('dotenv').config()
 function sendVerEmail(email){
     currentURL = "http://localhost:3000/"
     const uniqueString = uuidv4();
+    //توليد سلسلة فريدة من نوع uuidv4 
+    //للاستخدام كمعرف فريد لطلب إعادة تعيين كلمة المرور
 
+
+//يتم استخدام مكتبة Nodemailer لإنشاء مرسل(خادم) بريد إلكتروني 
     let transporter = nodemailer.createTransport({
         service: 'gmail',
-        secure: true,
+        secure: true,//تشفير الاتصال 
         auth:{
             user: process.env.email,     
             pass: process.env.emailPassword, 
@@ -24,15 +28,17 @@ function sendVerEmail(email){
         }
     })
 
-//Step 2
+//    //تهيئة خيارات البريد الإلكتروني
     let mailOption = {
         from: 'Admin',       
         to: email, 
         subject: 'Reset Password Request', 
         html: `<p>Please click below to be able to reset your password, once you open this link it wont be valid anymore. </p>
          <a href = ${currentURL + "resetRequest/"+ email + "/" + uniqueString}> Click here </a>`
+         //النص الذي يحتوي على الرابط لإعادة تعيين كلمة المرور
     };
-    //hash the unique string
+    //تشفير السلسلة الفريدة باستخدام bcrypt
+    // وحفظها في قاعدة البيانات بجدولaccount
     hasheduniqueString = bcrypt.hash(uniqueString, 10)
     .then((hasheduniqueString) => {                 
         // seet values in     
