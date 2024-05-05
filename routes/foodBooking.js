@@ -10,8 +10,7 @@ router.post("/submitOrders", (req, res)=>{
     const menuId = req.body.menuId.split("،")
     const currentTime = new Date()  
     let frequency = [] 
-    //Check if the user made a real reservation(select at least one to reseve)
-    //if not, display an error message 
+  //تحقق مما إذا كان المستخدم قد أجرى حجزًا حقيقيًا (اختر حجزًا واحدًا على الأقل للحجز)
         if(req.body.menuId.length){
         db.query("SELECT * FROM ma3annakul.menu where account_id =? ", [resturantId], (error, _result)=>{
             if(error){

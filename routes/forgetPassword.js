@@ -5,7 +5,7 @@ const db = require("../config/db")
 const methodOverride = require("method-override")  
 router.use(methodOverride("_method"))  
 
-passEmail = require('../config/passwordRequest')  // Forget password
+passEmail = require('../config/passwordRequest')  
 
 router.post("/newPasswordReq", (req, res)=>{
     let {email} = req.body   
