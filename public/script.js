@@ -55,7 +55,8 @@ function validatePhone(){
 }
 
 (function (){
-    const forms = document.querySelectorAll('.needs-validation-signup');
+    const forms = document.querySelectorAll('.needs-validation-signup');//تحديد جميع النماذج التي تحمل الفئة 
+    //"needs-validation-signup" في الصفحة
     for (let form of forms){
       form.addEventListener(
         "submit",

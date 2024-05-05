@@ -1,6 +1,6 @@
 
 (function() {
-    window.addEventListener('load', initial);
+    window.addEventListener('load', initial);//يتم استدعاء الدالة initial عندما يتم تحميل الصفحة بالكامل.
     function initial(){ 
         Toastify({
             text: "تمت عملية الحجز بنجاح",

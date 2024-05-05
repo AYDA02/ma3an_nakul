@@ -4,7 +4,7 @@ const classes = ['mainDishes', 'sandwich', 'juice', 'sweets', 'soup', 'fastFood'
         document.querySelectorAll(".btn")[i].addEventListener("click", addItem);//لكل زر من الازرار
     } 
 
-    function addItem(){
+    function addItem(){//يتم استدعاء الدالة عند النقر على أي زر من الأزرار
         classLocations = classes.indexOf(String(this.className.split(" ")[1]))
         let innerValue = document.querySelectorAll("."+classes[classLocations])[1].innerHTML.split(" ") 
         document.querySelectorAll("."+classes[classLocations])[1].innerHTML = " " +  innerValue[0] + innerValue[1] + " " +  innerValue[2] + " " +  String(Number(innerValue[3])-1)

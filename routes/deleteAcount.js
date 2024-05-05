@@ -8,7 +8,8 @@ router.use(methodOverride("_method"))
 router.delete('/delete', (req,res) => {
     
     id = req.session.userId
-    if(!id) return res.redirect('/endSeccion')
+    if(!id) return 
+    res.redirect('/endSeccion')//لم يقم المستخدم بتسجيل الدخول
     const deleted="DELETE FROM account WHERE id=? "
     db.query(deleted,[id],(error,results) => {
         if(error){
