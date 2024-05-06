@@ -12,8 +12,10 @@ app.use(session({
     cookie: { maxAge: 10000000 } 
 }))
 
-const publicDirectory = path.join(__dirname,'public');
-app.set('views', __dirname + '/views');
+const publicDirectory = path.join(__dirname,'public');//تعريف مسار المجلد العام الذي يحتوي على الملفات الثابتة لموقع الويب
+app.set('views', __dirname + '/views');//يحدد مسار المجلد الذي يحتوي على ملفات العرض (مثل ملفات EJS).
+// يستخدم المتغير __dirname للحصول على مسار المجلد الحالي للتطبيق،
+// ثم يتم دمجه مع اسم المجلد "views".
 app.set("view engine", "ejs")
 app.use(express.static(publicDirectory));
 app.use(express.urlencoded({extended:false }));
