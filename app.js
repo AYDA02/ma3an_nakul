@@ -12,6 +12,13 @@ app.use(session({
     cookie: { maxAge: 10000000 } 
 }))
 
+const publicDirectory = path.join(__dirname,'public');
+app.set('views', __dirname + '/views');
+app.set("view engine", "ejs")
+app.use(express.static(publicDirectory));
+app.use(express.urlencoded({extended:false }));
+
+
 app.use('/',require('./routes/pages').router);
 app.use('/profile',require('./routes/profile'));
 app.post('/edit',(req,res)=>{res.render('EditProfilePage',{message:false});})
@@ -36,8 +43,3 @@ app.listen(PORT, ()=>{//بدأ التشغيل على النفذ المحدد
 })
 
 
-const publicDirectory = path.join(__dirname,'public');
-app.set('views', __dirname + '/views');
-app.set("view engine", "ejs")
-app.use(express.static(publicDirectory));
-app.use(express.urlencoded({extended:false }));
