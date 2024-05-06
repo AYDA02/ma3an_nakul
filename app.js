@@ -1,22 +1,16 @@
-const express = require('express');
-const path = require('path');
+const express = require('express');// استيراد المكتبة لبناء تطبيق الويب
+const path = require('path');//للتعامل مع المسارات
 const app = express();
-const PORT = process.env.PORT ||3000
+const PORT = process.env.PORT ||3000 //تعيين المنفذ الي بشتغل عليه الموقع
 const session = require('express-session');
 
-app.use(express.json());
+app.use(express.json());//لاضافة الجلسات
 app.use(session({ 
     secret: '123456catr',
-    resave: false,
-    saveUninitialized: false,
+    resave: false,//لمنع حفظ الجلسات التي لم تتغير
+    saveUninitialized: false,//لمنع إنشاء جلسات لكل طلب وحفظها
     cookie: { maxAge: 10000000 } 
 }))
-
-const publicDirectory = path.join(__dirname,'public');
-app.set('views', __dirname + '/views');
-app.set("view engine", "ejs")
-app.use(express.static(publicDirectory));
-app.use(express.urlencoded({extended:false }));
 
 app.use('/',require('./routes/pages').router);
 app.use('/profile',require('./routes/profile'));
@@ -32,14 +26,18 @@ app.use('/res',require('./routes/meals'))
 app.use('/', require("./routes/logout"))
 app.use('/', require('./routes/foodBooking'))
 app.use('/', require('./routes/forgetPassword'))
-app.use((req, res) => {
+app.use((req, res) => {// التعامل مع الطلبات التي لم تتوافق مع أي مسار موجود
     res.status(404).render('error');
   });
 
 
-app.listen(PORT, ()=>{
+app.listen(PORT, ()=>{//بدأ التشغيل على النفذ المحدد
     console.log(`Connected in ${PORT} port`);
 })
 
 
-
+const publicDirectory = path.join(__dirname,'public');
+app.set('views', __dirname + '/views');
+app.set("view engine", "ejs")
+app.use(express.static(publicDirectory));
+app.use(express.urlencoded({extended:false }));
