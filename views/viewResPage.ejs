@@ -91,37 +91,30 @@
     </section>
     <section class="book" id="book">
         <h1 class="heading">
-            <span>حـ</span>
-            <span>جـ</span>
-            <span>ز</span>
+            <span>تــ</span>
+            <span>أ</span>
+            <span>كـ</span>
+            <span>يـ</span>
+            <span>ـد</span>
             <span class="space"></span>
             <span>ا</span>
             <span>لـ</span>
-            <span>آ</span>
-            <span>ن</span>
+            <span>ـحـ</span>
+            <span>ـجـ</span>
+            <span>ز</span>
         </h1>
 
         <div class="row">
             <form action="/submitOrders" method="POST" style="margin-top: -105px;">       
                 <input style = "display: none;" value = "<%= resturantId %>" name = "resturantId">
                 <div class="inputBox">
-                    <h3>اسم الجمعية</h3>
-                    <input type="text" placeholder="ادخل هنا" value = "<%=charityInfo.name%>" readonly>
-                </div>
-                <div class="inputBox">
-                    <h3>البريد الالكتروني</h3>
-                    <input type="text" placeholder="بريد الجمعية الالكتروني" value = "<%=charityInfo.email%>" readonly>
-                </div>
-                <div class="inputBox">
-                    <h3>رقم الهاتف</h3>
-                    <input type="text" placeholder="رقم الهاتف او الجوال" value = "<%=charityInfo.phone%>" readonly>
                     <h3>الحجوزات</h3>
                     <textarea id='text' type="text" name = 'orders' readonly required></textarea>
                     <textarea style = "display: none;"id='ids' type="text" name = 'menuId'></textarea>
                 </div>
                 <div class="inputBox">
                 </div>
-                <input type="submit" class="btn" value="احجز الان">
+                <input type="submit" class="btn" value="تأكيد الان">
             </form>
         </div>
     </section>
