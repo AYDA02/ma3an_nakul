@@ -10,6 +10,25 @@
             <p style="color: black; font-family:'Times New Roman', Times, serif;font-size:xx-large"> حذف حسابك</p><br>
             <h1  style="font-family: Simplified Arabic ,'Vazirmatn', sans-serif; text-align:center; size:14px";class="labels">هل انت متأكد من حذف الحساب؟</h1><br>
             <input type="submit" value="تأكيد" class="btn">
+            <input type="submit" value="الغاء"class="btn"id="cancel-delete-button">
         </form>
+
+
+
     </div>
+
+    <script>
+        document.getElementById('cancel-delete-button').addEventListener('click', function(event) {
+            event.preventDefault(); 
+            const userType = confirm("هل تريد العودة إلى الصفحة الرئيسية");
+            let redirectUrl;
+                if (userType) {
+                    redirectUrl = "/restaurant";
+                } else {
+                    redirectUrl = "/charity";
+                }
+                     window.location.href = redirectUrl;
+        });
+    </script>
+
 </body>
