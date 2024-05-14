@@ -579,25 +579,26 @@ header .navbar a:hover{
 }
 
 .contact .row{
-  display: flex;
-  flex-wrap: wrap;
-  gap:1.5rem;
-  align-items: center;
+
+
+  gap:8rem;
+ 
 }
 
 .contact .row .image{
-  flex:1 1 35rem;
+  flex:1 1 30rem;
 }
 
 .contact .row .image img{
-  width:100%;
+  width:80%;
+  display:flex;
 }
 
 .contact .row form{
   flex:1 1 50rem;
-  padding:2rem;
+  padding:3rem;
   box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
-  border-radius: .5rem;
+  border-radius: .10rem;
 }
 
 .contact .row form .inputBox{
