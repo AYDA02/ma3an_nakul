@@ -272,8 +272,8 @@ header .search-bar-container label:hover{
 }
 
 .login-form-container form{
-  margin:2rem;
-  padding:1.5rem 2rem;
+  margin:1rem;
+  padding:1rem 2rem;
   border-radius: .5rem;
   background:#fff;
   width:50rem;
@@ -292,7 +292,7 @@ header .search-bar-container label:hover{
   padding:1rem;
   font-size: 1.7rem;
   color:#333;
-  margin:.6rem 0;
+  margin:.2rem 0;
   text-transform: none;
 }
 header .navbar a{
