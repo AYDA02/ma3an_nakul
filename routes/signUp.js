@@ -13,7 +13,7 @@ app.use(express.static('public'));
 
 router.post('/signUp',(req,res) => {
    
-    const Info = `${req.body.name}|${req.body.email}|${req.body.phone}|${req.body.password}|${req.body.type}`
+    const Info = `${req.body.name}|${req.body.email}|${req.body.phone}|${req.body.password}|${req.body.type}|${req.body.website}|${req.body.location}`
     const hashedInfo = cryptr.encrypt(Info);
     db.query('SELECT email FROM account WHERE email = ?',[req.body.email],async(error,results) => {
         if(error){

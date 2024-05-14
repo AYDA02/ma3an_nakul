@@ -14,10 +14,12 @@ router.get("/user/verify/:hashed", async(req ,res)=>{
         email : Info[1],
         phone : Info[2],
         password : Info[3],
-        type : Info[4]
+        type : Info[4],
+        website : Info[5],
+        location : Info[6]
     }
     hashedPassword = await bcrypt.hash(Information.password, 8);
-    db.query('INSERT INTO account SET ?',{name:Information.name,email:Information.email,phone:Information.phone,password:hashedPassword,type:Information.type},(err,result) => {
+    db.query('INSERT INTO account SET ?',{name:Information.name,email:Information.email,phone:Information.phone,password:hashedPassword,type:Information.type,website:Information.website,location:Information.location},(err,result) => {
         if(err){
             throw err;
         }
