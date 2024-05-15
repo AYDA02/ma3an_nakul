@@ -8,58 +8,96 @@
         <h1 class="heading top"> 
             <span>حجوزات الجمعية</span>
         </h1>
-        <section class="services" >
-                <div class="box-container box-container">
+    
+    <section class="services">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>اسم المطعم</th>
+                    <th>نوع الوجبة</th>
+                    <th>تاريخ الحجز</th>
+                    <th>الكمية</th>
+                    <th>إلغاء الحجز</th>
+                </tr>
+            </thead>
+            <tbody>
                 <% if(resdata.length > 0 ){
                         resdata.forEach((item) => { %>
-                            <div  class="box x 6">   
                                 <form action="/meal/delete_order/<%= item.id %>?_method=DELETE" method="POST">
-                                    <i class="fas fa-utensils"></i><br>
-                                    <label> اسم المطعم :  <%= item.name %>  </label><br>
-                                    <label > نوع الوجبة: <%= item.category %></label><br> 
-                                    <label> تاريخ الحجز: <%= item.date %></label><br>
-                                    <label>الكمية: <%= item.quantity %></label><br>
-    
-                                    <button class='fa-solid fa-trash-can' style='font-size:35px;color:#ffa200;' type="submit" title="الغاء الحجز"></button><br>
-                                </form> 
-                            </div>
+                                   
+                                    <tr>    
+                                      
+                                        <td><i class="fas fa-utensils" style='font-size:25px;color:#ffa200;'></i></td>
+                                        <td><%= item.name %></td>
+                                        <td><%= item.category %></td>
+                                        <td><%= item.date %></td>
+                                        <td><%= item.quantity %></td>
+                                        <td>
+                                            <button class='fa-solid fa-trash-can' style='font-size:30px;color:#ffa200;' type="submit" title="الغاء الحجز"></button>
+                                        </td>
+                                    </tr>
+                                </form>
                         <% 
                     })     
                 }
             %>
-                </div>
-        </section>
-    <% } %>
-    
-    <% if(resturantRes){ %>
-        <section class="services top">
-            <h1 class="heading">
-                <span>حجوزات المطعم</span>
-            </h1>
-            <section id="book">
-            <div class="box-container box-container">
-                <% if(resdata.length > 0 ){
-                    resdata.forEach((item) => { %>
-                        <div  class="box x 6" ">   
-                                <form action="/meal/delete_order/<%= item.id %>?_method=DELETE" method="POST">
-                                    <i class="fas fa-utensils"></i><br>
-                                    <label> اسم الجمعية :  <%= item.name %>  </label><br>
-                                    <label > نوع الوجبة: <%= item.category %></label><br> 
-                                    <label> التاريخ: <%= item.date %></label><br>
-                                    <label>الكمية: <%= item.quantity %></label><br>
-                                    <div style="display: flex;">
-                                       <div> <button class='fa-solid fa-box-archive' style='font-size:35px;color:#ffa200;' type="submit" title="ارشفة الطلب"></button><br></div>
-                                </form>
-                                <form action = "/profile/display/<%= item.account_id %>?" method = "POST">
-                                    <div><button class='fas' style='font-size:35px;color:#ffa200;' type="submit" title="عرض ملف الجمعية">&#xf2bb;</button></div>
-                                </form>
-                                    </div>
-                        </div> 
-                <% })     
-                } %>
-            </div>
-        </section>
+            </tbody>
+        </table>
     </section>
     <% } %>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding:1rem;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            font-size: 1.3rem;  
+        }
+    </style> 
+    <% if(resturantRes){ %>
+        <h1 class="heading top"> 
+            <span>حجوزات المطعم</span>
+        </h1>
+<section class="services">
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>اسم الجمعية</th>
+                <th>نوع الوجبة</th>
+                <th>تاريخ الحجز</th>
+                <th>الكمية</th>
+                <th>إلغاء الحجز</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if(resdata.length > 0 ){
+                    resdata.forEach((item) => { %>
+                            <form action="/meal/delete_order/<%= item.id %>?_method=DELETE" method="POST">
+                               
+                                <tr>    
+                                  
+                                    <td><i class="fas fa-utensils" style='font-size:25px;color:#ffa200;'></i></td>
+                                    <td><%= item.name %></td>
+                                    <td><%= item.category %></td>
+                                    <td><%= item.date %></td>
+                                    <td><%= item.quantity %></td>
+                                    <td>
+                                        <button class='fa-solid fa-trash-can' style='font-size:30px;color:#ffa200;' type="submit" title="الغاء الحجز"></button>
+                                    </td>
+                                </tr>
+                            </form>
+                    <% 
+                })     
+            }
+        %>
+        </tbody>
+    </table>
+</section>
+<% } %>
 </body>
 </html>
