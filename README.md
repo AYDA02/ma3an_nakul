@@ -1,4 +1,4 @@
-<h1> Luqmit 3ish </h1>
+<h1> Ma3an Nakul</h1>
 In this project, we created a way of networking between restaurants and charities to manage daily food surplus from restaurants in beneficial ways
 rather than throwing it away.
 
